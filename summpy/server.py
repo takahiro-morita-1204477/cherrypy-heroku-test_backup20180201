@@ -9,7 +9,7 @@ import cherrypy
 import json
 
 #from . import tools
-from .tools import tree_encode
+import summpy.tools
 
 
 class Summarizer(object):
@@ -81,8 +81,8 @@ class Summarizer(object):
             return json.dumps({'error': str(e)}, ensure_ascii=False, indent=2)
         else:
             res = json.dumps(
-                #tools.tree_encode({
-                tree_encode({
+                tools.tree_encode({
+                #tree_encode({
                     'summary': summary, 'debug_info': debug_info
                 }),
                 ensure_ascii=False, indent=2
