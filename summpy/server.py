@@ -112,7 +112,7 @@ if __name__ == '__main__':
         },
         '/static': {
             'tools.staticdir.on': True,
-            'tools.staticdir.dir': './server_data'
+            'tools.staticdir.dir': 'server_data'
         }
     }
     cherrypy.quickstart(Summarizer(), '/', conf)
