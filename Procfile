@@ -1,1 +1,1 @@
-web: python -m app.summpy.server -p 8080
+web: python -m app.summpy.server -h 0.0.0.0 -p 5000
