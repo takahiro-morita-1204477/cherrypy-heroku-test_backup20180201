@@ -8,8 +8,8 @@ import getopt
 import cherrypy
 import json
 
-#from . import tools
-import tools
+from . import tools
+#import tools
 
 
 class Summarizer(object):
@@ -107,7 +107,7 @@ if __name__ == '__main__':
         },
         '/static': {
             'tools.staticdir.on': True,
-            'tools.staticdir.dir': '/app/summpy/server_data'
+            'tools.staticdir.dir': './server_data'
         }
     }
     cherrypy.quickstart(Summarizer(), '/', config=config)
