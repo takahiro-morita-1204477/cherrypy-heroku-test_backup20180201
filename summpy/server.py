@@ -92,16 +92,11 @@ class Summarizer(object):
 
 if __name__ == '__main__':
 
-    options, args = getopt.getopt(sys.argv[1:], 'h:p:')
-    options = dict(options)
-    host, port = options['-h'], int(options['-p'])
-
-    cherrypy.config.update({
-        'server.socket_host': host,
-        'server.socket_port': port
-    })
-
-    conf = {
+    config = {
+        'global': {
+            'server.socket_host': '0.0.0.0',
+            'server.socket_port': int(os.environ.get('PORT', 5000)),
+        },
         '/': {
             'tools.staticdir.root': os.path.dirname(os.path.abspath(__file__))
         },
@@ -113,7 +108,7 @@ if __name__ == '__main__':
         },
         '/static': {
             'tools.staticdir.on': True,
-            'tools.staticdir.dir': 'server_data'
+            'tools.staticdir.dir': '/app/summpy/server_data'
         }
     }
-    cherrypy.quickstart(Summarizer(), '/', conf)
+    cherrypy.quickstart(Summarizer(), '/', config=config)
