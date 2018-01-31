@@ -9,7 +9,7 @@ import cherrypy
 import json
 
 #from . import tools
-import summpy.tools
+import tools
 
 
 class Summarizer(object):
@@ -82,7 +82,6 @@ class Summarizer(object):
         else:
             res = json.dumps(
                 tools.tree_encode({
-                #tree_encode({
                     'summary': summary, 'debug_info': debug_info
                 }),
                 ensure_ascii=False, indent=2
