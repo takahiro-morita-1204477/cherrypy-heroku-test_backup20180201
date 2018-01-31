@@ -8,7 +8,8 @@ import getopt
 import cherrypy
 import json
 
-from . import tools
+#from . import tools
+from app.summpy import tools
 
 
 class Summarizer(object):
