@@ -80,6 +80,8 @@ class Summarizer(object):
             print("ERRORRRRRRRRRRRRRRRRRRR10")
 
             summary, debug_info = summarizer(text, **summarizer_params)
+            print("ERRORRRRRRRRRRRRRRRRRRR10000")
+            print(summary)
 
         except Exception, e:
             return json.dumps({'error': str(e)}, ensure_ascii=False, indent=2)
