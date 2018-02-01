@@ -70,7 +70,7 @@ class Summarizer(object):
 
             if algo in ('lexrank', 'clexrank', 'divrank'):
                 summarizer = self.get_summarizer('lexrank')
-                print("ERRORRRRRRRRRRRRRRRRRRR1")
+                print(summarizer)
                 if algo == 'clexrank':
                     summarizer_params['continuous'] = True
                 if algo == 'divrank':
