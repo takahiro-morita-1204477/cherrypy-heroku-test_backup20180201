@@ -64,12 +64,18 @@ def lexrank(sentences, continuous=False, sim_threshold=0.1, alpha=0.9,
         words = tools.word_segmenter_ja(sent)
         tf = collections.Counter(words)
         sent_tf_list.append(tf)
+    print("sent_tf_list")
+    print(sent_tf_list)
 
     sent_vectorizer = DictVectorizer(sparse=True)
     sent_vecs = sent_vectorizer.fit_transform(sent_tf_list)
+    print("sent_vecs")
+    print(sent_vecs)
 
     # compute similarities between senteces
     sim_mat = 1 - pairwise_distances(sent_vecs, sent_vecs, metric='cosine')
+    print("sim_mat")
+    print(sim_mat)
 
     if continuous:
         linked_rows, linked_cols = numpy.where(sim_mat > 0)
