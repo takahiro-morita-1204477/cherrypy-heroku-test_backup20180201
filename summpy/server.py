@@ -16,7 +16,6 @@ class Summarizer(object):
 
     def __init__(self):
         self.summarizers = {}
-        print("jiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
 
     def get_summarizer(self, name):
         '''
@@ -111,4 +110,5 @@ if __name__ == '__main__':
             'tools.staticdir.dir': './server_data'
         }
     }
+    print("jiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
     cherrypy.quickstart(Summarizer(), '/', config=config)
