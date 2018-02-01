@@ -25,7 +25,9 @@ class Summarizer(object):
             pass
         elif name == 'lexrank':
             from . import lexrank
+            print("ERRORRRRRRRRRRRRRRRRRRR100")
             self.summarizers[name] = lexrank.summarize
+            print("ERRORRRRRRRRRRRRRRRRRRR1000")
         elif name == 'mcp':
             from . import mcp_summ
             self.summarizers[name] = mcp_summ.summarize
@@ -67,14 +69,15 @@ class Summarizer(object):
                 summarizer_params[param] = value
 
             if algo in ('lexrank', 'clexrank', 'divrank'):
-                print("jiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
                 summarizer = self.get_summarizer('lexrank')
+                print("ERRORRRRRRRRRRRRRRRRRRR1")
                 if algo == 'clexrank':
                     summarizer_params['continuous'] = True
                 if algo == 'divrank':
                     summarizer_params['use_divrank'] = True
             elif algo == 'mcp':
                 summarizer = self.get_summarizer('mcp')
+            print("ERRORRRRRRRRRRRRRRRRRRR10")
 
             summary, debug_info = summarizer(text, **summarizer_params)
 
