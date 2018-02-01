@@ -50,6 +50,7 @@ class Summarizer(object):
             imp_require: (lexrank only)
               cumulative LexRank score [0.0-1.0]
         '''
+        print("jiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
         try:  # TODO: generate more useful error message
             # fix parameter type
             for param, value in summarizer_params.items():
