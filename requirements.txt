@@ -4,4 +4,5 @@ janome
 scikit-learn
 numpy
 scipy
-networkx
+networkx==1.11
+multiqc==1.2
