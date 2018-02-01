@@ -67,6 +67,7 @@ class Summarizer(object):
                 summarizer_params[param] = value
 
             if algo in ('lexrank', 'clexrank', 'divrank'):
+                print("jiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
                 summarizer = self.get_summarizer('lexrank')
                 if algo == 'clexrank':
                     summarizer_params['continuous'] = True
@@ -110,5 +111,4 @@ if __name__ == '__main__':
             'tools.staticdir.dir': './server_data'
         }
     }
-    print("jiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
     cherrypy.quickstart(Summarizer(), '/', config=config)
