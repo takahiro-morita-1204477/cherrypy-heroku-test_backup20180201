@@ -1,1 +1,1 @@
-web: python /app/summpy/server.py
+web: python -m app.summpy.server
