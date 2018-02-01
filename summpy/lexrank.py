@@ -82,6 +82,7 @@ def lexrank(sentences, continuous=False, sim_threshold=0.1, alpha=0.9,
         if i == j:
             continue
         weight = sim_mat[i,j] if continuous else 1.0
+        print(weight)
         graph.add_edge(i, j, {'weight': weight})
 
     scores = ranker(graph, **ranker_params)
