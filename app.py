@@ -21,5 +21,5 @@ config = {
         'tools.staticdir.dir': 'assets',
     }
 }
-
+print("jiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
 cherrypy.quickstart(HelloWorld(), '/', config=config)
